@@ -90,3 +90,40 @@ function enableAutoplay() {
 						</div>
 					</body>
 				</html>
+<!DOCTYPE html>
+<head>
+    <style>
+   @-webkit-keyframes my {
+0% { color: #FF0000; }
+50% { color: #fff; }
+100% { color: #0000FF; }
+}
+@-moz-keyframes my {
+0% { color: #FF00000; }
+50% { color: #fff; }
+100% { color: #0000FF; }
+}
+@-o-keyframes my {
+0% { color: #FF0000; }
+50% { color: #fff; }
+100% { color: #0000FF; }
+}
+@keyframes my {
+0% { color: #FF0000; }
+50% { color: #fff; }
+100% { color: #0000FF; }
+}
+.test {
+font-size:20px;
+font-weight:bold;
+-webkit-animation: my 700ms infinite;
+-moz-animation: my 700ms infinite;
+-o-animation: my 700ms infinite;
+animation: my 700ms infinite;
+} 
+</style>
+</head>
+<body>
+<marquee><p class="test">GOOD BYE  SEE YOU AGAIN</p></marquee>
+</body>
+</html>
