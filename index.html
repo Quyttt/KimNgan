@@ -3,10 +3,31 @@
 <head>
 <title>🇻🇳HÙNG SILVER, ANH TRAI BÌNH GOLD!🇻🇳</title>
 <style>
-body {
-    background-color:#FFFFFF;
+body{
+    background-color: #FFFFFF;
 }
-      
+
+header {
+    background-color:rgba(33, 33, 33, 0.9);
+    color:#ffffff;
+    display:block;
+    font: 14px/1.3 Arial,sans-serif;
+    height:50px;
+    position:relative;
+    z-index:5;
+}
+.text {
+  font-weight: 100;
+  font-size: 28px;
+  color: #0000FF;
+  font-family: Iceland;
+  text-shadow: 0 0 0.5em cyan, 0 0 0.5em cyan;
+  
+}
+.dud {
+  color: #0000FF;
+}
+
 /* customizable snowflake styling */
     .snowflake {
       color: #fff;
@@ -38,8 +59,12 @@ div {text-align: center;}
 		<div class="snowflake">❆</div>
                 <div id="snow"></div>
         </div>
+<div>
+<font color="FF0000"><marquee><p style="font-size:30px">::::::::::::::::::::::::::WELCOME TO HUNGDEPTRAI.TK !:::::::::::::::::::::::::</p></marquee></font>
+<div>
 <font color="FF0000"><h1 style="text-align:center;font-size:18px""><br>🇻🇳🇻🇳MERRY CHRISTMAS 🇻🇳🇻🇳<br><br>&<br><br>🇻🇳🇻🇳🇻🇳 HAPPY NEW YEAR!🇻🇳🇻🇳🇻🇳<br></h1></font>
-
+</body>
+<body>
 <div style="width:100%;height:0px;position:relative;padding-bottom:56.250%;"><iframe src="https://streamable.com/e/s4mfkt?autoplay=1" frameborder="0" width="100%" height="100%" allowfullscreen allow="autoplay" style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
 <script>
 browser.setVolume(1);
@@ -51,14 +76,123 @@ function enableAutoplay() {
   vid.volume = 100;
 } 
 </script>
-<div>
-<font color="FF0000"><marquee><p style="font-size:30px">::::::::::::::::::::::::::Welcome to my website !:::::::::::::::::::::::::</p></marquee></font>
-<div>
-<div><font color="0000FF"><p><br>Bài hát: Ái phi (爱妃)<br>
-<br>Sáng tác & Thể hiện: Hậu Huyền (后弦)<br>
-<br>Trans + Sub: Viie<br>
-<div><font color="FF0000"><h1>//Hope u enjoy it!//</h1></font></div>
-<div><h1>666</h1></div>
+<body>
+<center><br><br><br>
+<div class="text"></div>
+<br><br><br>
+<script>
+class TextScramble {
+  constructor(el) {
+    this.el = el
+    this.chars = '!@#$%^&*()_-=+{}:"|<>?,./;'
+    this.update = this.update.bind(this)
+  }
+  setText(newText) {
+    const oldText = this.el.innerText
+    const length = Math.max(oldText.length, newText.length)
+    const promise = new Promise((resolve) => this.resolve = resolve)
+    this.queue = []
+    for (let i = 0; i < length; i++) {
+      const from = oldText[i] || ''
+      const to = newText[i] || ''
+      const start = Math.floor(Math.random() * 40)
+      const end = start + Math.floor(Math.random() * 40)
+      this.queue.push({ from, to, start, end })
+    }
+    cancelAnimationFrame(this.frameRequest)
+    this.frame = 0
+    this.update()
+    return promise
+  }
+  update() {
+    let output = ''
+    let complete = 0
+    for (let i = 0, n = this.queue.length; i < n; i++) {
+      let { from, to, start, end, char } = this.queue[i]
+      if (this.frame >= end) {
+        complete++
+        output += to
+      } else if (this.frame >= start) {
+        if (!char || Math.random() < 0.28) {
+          char = this.randomChar()
+          this.queue[i].char = char
+        }
+        output += `<span class="dud">${char}</span>`
+      } else {
+        output += from
+      }
+    }
+    this.el.innerHTML = output
+    if (complete === this.queue.length) {
+      this.resolve()
+    } else {
+      this.frameRequest = requestAnimationFrame(this.update)
+      this.frame++
+    }
+  }
+  randomChar() {
+    return this.chars[Math.floor(Math.random() * this.chars.length)]
+  }
+}
+
+const phrases = [
+  'Bài hát: Ái phi (爱妃).',
+  'Sáng tác & Thể hiện: Hậu Huyền (后弦).',
+  'Trans + Sub: Viie.',
+  'Hope you enjoy it!',
+]
+
+const el = document.querySelector('.text')
+const fx = new TextScramble(el)
+
+let counter = 0
+const next = () => {
+  fx.setText(phrases[counter]).then(() => {
+    setTimeout(next, 1500)
+  })
+  counter = (counter + 1) % phrases.length
+}
+
+next()
+
+'use strict';
+
+var app = {
+
+  chars: [''],
+
+  init: function () {
+    app.container = document.createElement('div');
+    app.container.className = 'animation-container';
+    document.body.appendChild(app.container);
+    window.setInterval(app.add, 100);
+  },
+
+  add: function () {
+    var element = document.createElement('span');
+    app.container.appendChild(element);
+    app.animate(element);
+  },
+
+  animate: function (element) {
+    var character = app.chars[Math.floor(Math.random() * app.chars.length)];
+    var duration = Math.floor(Math.random() * 15) + 1;
+    var offset = Math.floor(Math.random() * (50 - duration * 2)) + 3;
+    var size = 10 + (15 - duration);
+    element.style.cssText = 'right:'+offset+'vw; font-size:'+size+'px;animation-duration:'+duration+'s';
+    element.innerHTML = character;
+    window.setTimeout(app.remove, duration * 1000, element);
+  },
+
+  remove: function (element) {
+    element.parentNode.removeChild(element);
+  },
+
+};
+
+document.addEventListener('DOMContentLoaded', app.init);
+</script>
+</body>
 <div><font color="0000FF">____________________________________________</font></div>
 <font color="FF0066"><div><h1> ĐÔI VAI GẦY </h1></div></font>
 <a href="https://m.facebook.com/waybackhome88"> Mạnh Hùng </a></div>
