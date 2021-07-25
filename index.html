@@ -1,6 +1,7 @@
 
 <html>
-<head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 
 <meta http-equiv="Content-Language" content="en-us">
 
@@ -30,13 +31,14 @@ a:hover, a:active {
 .glitch {
   animation: glitch-skew 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 4s infinite;
   font-family: orbitron, sans-serif;
-  font-size: 8rem;
+  font-size: 6rem;
   font-weight: 900;
   line-height: 1;
   position: relative;
   text-align: center;
   text-transform: uppercase;
   transform-origin: center top;
+  top:5px;
 }
 .glitch__main {
   color: #FFF;
@@ -648,7 +650,7 @@ a:hover, a:active {
   box-shadow: 0 0 4px 2px #FFF;
 }
 html, body {
-  background-image: url('http://4.bp.blogspot.com/-qTsIXSYIt0I/UbGqGm9RR_I/AAAAAAAAA6E/2zDTcQDSaW4/s1600/Thuthuatpro.info-h%C3%ACnh+n%E1%BB%81n+%C4%91%E1%BB%99ng6.gif');
+  background-image: url('https://i.imgur.com/uKfFSwP.jpg');
   background-repeat: no-repeat;
   background-image: cover;
   background-size: 100% 100%;
@@ -658,21 +660,199 @@ html, body {
    background-repeat: no-repeat;
   font-family: "VT323", monospace;
   color: ##ff0042;
- top: 10px;
+  top: 30%;
 }
 
-canvas {
-  background: #ff0000;
-  margin: auto;
-  position: absolute;
-  height: 22%;
-  width: 100%;;
-  left: 50%;
-  top: 50%;
-  top: 99vh;
+
+.clock{
+  background: #00000;
+  height: 120px;
   
-  transform: translateX(-50%) translateY(-50%);
+  line-height: 120px;
+  text-align: center;
+  padding: 0 30px;
+  box-shadow: -3px -3px 7px rgba(255,255,255,0.05),
+               3px 3px 5px rgba(0,0,0,0.5);
 }
+.clock .display{
+  font-size: 60px;
+  color: cyan;
+  letter-spacing: 5px;
+  font-family: 'Orbitron', sans-serif;
+}
+.content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content .text{
+  position: absolute;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  transform: scale(2);
+  padding: 5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  align-items: center;
+  bottom: 0px;
+}
+.content .text:before,
+.content .text:after {
+  padding: 0px;
+  color: white;
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  overflow: hidden;
+  top: 0;
+}
+.content .text:before{
+  left: 3px;
+  text-shadow: -2px 0 red;
+  animation: glitch-1 2s linear infinite reverse;
+}
+.content .text:after{
+  left: -3px;
+  text-shadow: -2px 0 blue;
+  animation: glitch-2 2s linear infinite reverse;
+}
+@keyframes glitch-1 {
+  0% {
+    clip: rect(132px, auto, 101px, 30px);
+  }
+  5% {
+    clip: rect(17px, auto, 94px, 30px);
+  }
+  10% {
+    clip: rect(40px, auto, 66px, 30px);
+  }
+  15% {
+    clip: rect(87px, auto, 82px, 30px);
+  }
+  20% {
+    clip: rect(137px, auto, 61px, 30px);
+  }
+  25% {
+    clip: rect(34px, auto, 14px, 30px);
+  }
+  30% {
+    clip: rect(133px, auto, 74px, 30px);
+  }
+  35% {
+    clip: rect(76px, auto, 107px, 30px);
+  }
+  40% {
+    clip: rect(59px, auto, 130px, 30px);
+  }
+  45% {
+    clip: rect(29px, auto, 84px, 30px);
+  }
+  50% {
+    clip: rect(22px, auto, 67px, 30px);
+  }
+  55% {
+    clip: rect(67px, auto, 62px, 30px);
+  }
+  60% {
+    clip: rect(10px, auto, 105px, 30px);
+  }
+  65% {
+    clip: rect(78px, auto, 115px, 30px);
+  }
+  70% {
+    clip: rect(105px, auto, 13px, 30px);
+  }
+  75% {
+    clip: rect(15px, auto, 75px, 30px);
+  }
+  80% {
+    clip: rect(66px, auto, 39px, 30px);
+  }
+  85% {
+    clip: rect(133px, auto, 73px, 30px);
+  }
+  90% {
+    clip: rect(36px, auto, 128px, 30px);
+  }
+  95% {
+    clip: rect(68px, auto, 103px, 30px);
+  }
+  100% {
+    clip: rect(14px, auto, 100px, 30px);
+  }
+}
+@keyframes glitch-2 {
+  0% {
+    clip: rect(129px, auto, 36px, 30px);
+  }
+  5% {
+    clip: rect(36px, auto, 4px, 30px);
+  }
+  10% {
+    clip: rect(85px, auto, 66px, 30px);
+  }
+  15% {
+    clip: rect(91px, auto, 91px, 30px);
+  }
+  20% {
+    clip: rect(148px, auto, 138px, 30px);
+  }
+  25% {
+    clip: rect(38px, auto, 122px, 30px);
+  }
+  30% {
+    clip: rect(69px, auto, 54px, 30px);
+  }
+  35% {
+    clip: rect(98px, auto, 71px, 30px);
+  }
+  40% {
+    clip: rect(146px, auto, 34px, 30px);
+  }
+  45% {
+    clip: rect(134px, auto, 43px, 30px);
+  }
+  50% {
+    clip: rect(102px, auto, 80px, 30px);
+  }
+  55% {
+    clip: rect(119px, auto, 44px, 30px);
+  }
+  60% {
+    clip: rect(106px, auto, 99px, 30px);
+  }
+  65% {
+    clip: rect(141px, auto, 74px, 30px);
+  }
+  70% {
+    clip: rect(20px, auto, 78px, 30px);
+  }
+  75% {
+    clip: rect(133px, auto, 79px, 30px);
+  }
+  80% {
+    clip: rect(78px, auto, 52px, 30px);
+  }
+  85% {
+    clip: rect(35px, auto, 39px, 30px);
+  }
+  90% {
+    clip: rect(67px, auto, 70px, 30px);
+  }
+  95% {
+    clip: rect(71px, auto, 103px, 30px);
+  }
+  100% {
+    clip: rect(83px, auto, 40px, 30px);
+  }
+}
+
+
 </style>
 </head>
 <body>
@@ -686,105 +866,54 @@ canvas {
     <span class="glitch__line glitch__line--second"></span>
 </div>
 <marquee><h3><font style="text-shadow:0px 1px 5px #000" color="#FFFFFF"> HI EVERYONE, MÌNH LÀ QUỲNH HOA. AI CHƠI PUBG MOBILE ADD MÌNH NHA </font></h3></marquee>
+<div class="content">
+         <h3 class="text" data-text="Text Glitch">
+            Kể ra mình cũng xinh đấy chứ!😊🙄
+        
+       
+         <br>
+         <div>Sao ko ai nhận ra nhờ</div>
+        
+         <br>
+         Yêu em đi, phí thế🥺🥺🥺
+         </h3>
+      </div>
 <div><h1><a href="https://www.facebook.com/profile.php?id=100070693515932">MY FACEBOOK</a></h1></div>
-<div style="background-image:url('https://i.imgur.com/uKfFSwP.jpg'); width:100%; height:100%; background-position:center; background-repeat:no-repeat;background-size: 100% 85%;">&nbsp;</div>
 
-<canvas></canvas>
+
+
+ <div class="clock">
+      <div class="display">
+</div>
+</div>
 <script>
-const canvas = document.querySelector("canvas");
-const ctx = canvas.getContext("2d");
-const colors = [
-"#b4b2b5",
-"#dfd73f",
-"#6ed2dc",
-"#66cf5d",
-"#c542cb",
-"#d0535e",
-"#3733c9"];
-
-let linePos = 0,
-rAF;
-
-canvas.width = innerWidth;
-canvas.height = innerHeight;
-
-function texts(color) {
-  ctx.font = "6vh Bungee Outline";
-  ctx.shadowBlur = 30;
-  ctx.shadowColor = color;
-  ctx.fillStyle = color;
-  ctx.setTransform(1, -0.15, 0, 1, 0, -10);
-  ctx.fillText("QUỲNH HOA MMS", innerWidth / 2, innerHeight / 2 - 5);
-
-  ctx.fillStyle = "white";
-  ctx.shadowBlur = 30;
-  ctx.shadowColor = color;
-  ctx.fillText("QUỲNH HOA MMS", innerWidth / 2, innerHeight / 2);
-  ctx.font = "4vh Bungee Inline";
-  ctx.shadowBlur = 30;
-  ctx.shadowColor = color;
-  ctx.fillStyle = "#ff00c3";
-  ctx.setTransform(1, -0.15, 0, 1, 0, -10);
-  ctx.fillText(
-  "NEVER GIVE UP!",
-  innerWidth / 2,
-  innerHeight / 2 + innerHeight / 10);
-
-
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
-}
-
-function glitch() {
-  rAF = window.requestAnimationFrame(glitch);
-
-  ctx.fillStyle = "#1a191c";
-  ctx.fillRect(0, 0, innerWidth, innerHeight);
-
-  texts(colors[Math.floor(Math.random() * 7)]);
-  ctx.shadowBlur = 0;
-  ctx.shadowColor = "none";
-  ctx.setTransform(1, 0, 0, 1, 0, 0);
-
-  for (let i = 0; i < 1000; i++) {
-    ctx.fillStyle = `rgba(255, 255, 255, ${Math.random() * 0.01})`;
-    ctx.fillRect(
-    Math.floor(Math.random() * innerWidth),
-    Math.floor(Math.random() * innerHeight),
-    Math.floor(Math.random() * 30) + 1,
-    Math.floor(Math.random() * 30) + 1);
-
-
-    ctx.fillStyle = `rgba(0,0,0,${Math.random() * 0.1})`;
-    ctx.fillRect(
-    Math.floor(Math.random() * innerWidth),
-    Math.floor(Math.random() * innerHeight),
-    Math.floor(Math.random() * 25) + 1,
-    Math.floor(Math.random() * 25) + 1);
-
-  }
-
-  ctx.fillStyle = colors[Math.floor(Math.random() * 40)];
-  ctx.fillRect(
-  Math.random() * innerWidth,
-  Math.random() * innerHeight,
-  Math.random() * innerWidth,
-  Math.random() * innerHeight);
-
-  ctx.setTransform(1, 0, 0, .8, .2, 0);
-
-
-}
-
-glitch();
-
-window.addEventListener('resize', () => {
-  canvas.width = innerWidth;
-  canvas.height = innerHeight;
-});
-</script>
+      setInterval(function(){
+        const clock = document.querySelector(".display");
+        let time = new Date();
+        let sec = time.getSeconds();
+        let min = time.getMinutes();
+        let hr = time.getHours();
+        let day = 'AM';
+        if(hr > 12){
+          day = 'PM';
+          hr = hr - 12;
+        }
+        if(hr == 0){
+          hr = 12;
+        }
+        if(sec < 10){
+          sec = '0' + sec;
+        }
+        if(min < 10){
+          min = '0' + min;
+        }
+        if(hr < 10){
+          hr = '0' + hr;
+        }
+        clock.textContent = hr + ':' + min + ':' + sec + " " + day;
+      });
+    </script>
 </body>
-
 </html>
   
  
