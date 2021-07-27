@@ -991,7 +991,7 @@ const resolver = {
  */
 const strings = [
 'Kể ra mình cũng xinh đấy chứ😊',
-'Sao lại không ai nhận ra nhỉ😥',
+'Sao không ai nhận ra nhỉ😥',
 'Yêu em đi🥺🥺🥺',
 'Phí thế🙄🙄🙄',];
 
@@ -1050,9 +1050,9 @@ next()
         let min = time.getMinutes();
         let hr = time.getHours();
         let day = 'AM';
-        if(hr > 24){
+        if(hr > 12){
           day = 'PM';
-          hr = hr - 24;
+          hr = hr - 12;
         }
         if(hr == 0){
           hr = 0;
