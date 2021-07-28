@@ -1,4 +1,5 @@
 
+
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
@@ -39,8 +40,8 @@ h3 {color: #ff0027;font-size: 30px;margin: 0;text-align:center;text-transform:up
   display: block;
   align-items: center;
   justify-content: center;
-  height: 30%;
-  padding: 3rem;
+  height: 55%;
+  padding: 4rem;
 }
 
 .heading {
@@ -71,6 +72,56 @@ a:link, a:visited {
     pointer-events: none;
     z-index: 1000;
 }
+
+.var-highlight {
+  color: rgb(245,31,31);
+  text-shadow: 0 0 0.5em red, 0 0 0.5em red;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.string-highlight {
+  color: rgb(36,8,232);
+  font-weight: 300;
+  font-family: Iceland;
+  text-shadow: 0 0 0.5em cyan, 0 0 0.5em cyan;
+  text-transform: uppercase;
+
+}
+
+#typewriter {
+  font-size: 3em;
+  margin: 0;
+  font-family: "Courier New";
+  color:rgb(22,40,248);
+  
+
+  
+}
+#typewriter:after {
+  content: "_";
+  -webkit-animation: blink 500ms linear infinite alternate;
+          animation: blink 500ms linear infinite alternate;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
 a:hover, a:active {
     background-color: pink;
 }
@@ -701,37 +752,23 @@ a:hover, a:active {
 
 
 
-.clock{
-  background: #00000;
-  height: 120px;
-  
-  line-height: 120px;
-  text-align: center;
-  padding: 0 30px;
-  box-shadow: -3px -3px 7px rgba(255,255,255,0.05),
-               3px 3px 5px rgba(0,0,0,0.5);
-}
-.clock .display{
-  font-size: 60px;
-  color: cyan;
-  letter-spacing: 5px;
-  font-family: Iceland;
-}
+
 .content{
   width: 100%;
-  height: 70%;
+  height: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: 10px;
+  bottom: 0px;
+  position: relative;
 }
 .content .text{
-  position: absolute;
+  position: relative;
   color: #fff;
   font-weight: 600;
   font-size: 20px;
   transform: scale(2);
-  padding: 0px;
+  padding-bottom: 5px;
   letter-spacing: 2px;
   text-transform: uppercase;
   align-items: center bottom;
@@ -897,6 +934,74 @@ a:hover, a:active {
 
 </head>
 <body>
+  <div id="snow"></div>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+    script.onload = function(){
+        particlesJS("snow", {
+            "particles": {
+                "number": {
+                    "value": 200,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "opacity": {
+                    "value": 0.7,
+                    "random": false,
+                    "anim": {
+                        "enable": false
+                    }
+                },
+                "size": {
+                    "value": 5,
+                    "random": true,
+                    "anim": {
+                        "enable": false
+                    }
+                },
+                "line_linked": {
+                    "enable": false
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 5,
+                    "direction": "bottom",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": true,
+                        "rotateX": 300,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "events": {
+                    "onhover": {
+                        "enable": false
+                    },
+                    "onclick": {
+                        "enable": false
+                    },
+                    "resize": false
+                }
+            },
+            "retina_detect": true
+        });
+    }
+    document.head.append(script);
+});
+
+</script> 
 <div class="glitch" data-text="Strobocops">
 
     <span class="glitch__color glitch__color--red">QUỲNH HOA MMS</span>
@@ -907,18 +1012,91 @@ a:hover, a:active {
     <span class="glitch__line glitch__line--second"></span>
 </div>
 
-<div id="snow"></div>
-<marquee bgcolor="#e21482" ><h3><font style="text-shadow:0px 1px 5px #000" color="#FFFFFF"> HI EVERYONE, MÌNH LÀ QUỲNH HOA. AI CHƠI PUBG MOBILE ADD MÌNH NHA </font></h3></marquee>
 
+<marquee bgcolor="#e21482" ><h3><font style="text-shadow:0px 1px 5px #000" color="#FFFFFF"> ...WELCOME TO QUYNHHOA.TK-CHÚC BẠN 1 NGÀY TỐT LÀNH-VÀ ĐƯỢC NHIỀU TOP1... </font></h3></marquee>
 
+<pre id="typewriter">
+<span class="var-highlight">HI,I'M QUỲNH HOA...</span>      
+      👉.<span class="string-highlight">18,5 YEARS OLD</span>...
+      👉.<span class="string-highlight">45,99999kg!</span>...
+      👉.<span class="string-highlight">From Bắc Giang with ♥️</span>...
+      👉.<span class="string-highlight">Xinh gái nhất xóm😊😊😊</span>...
+      👉.<span class="string-highlight">Thích chơi PUBG</span>...
+      👉.<span class="string-highlight">Và vẫn còn Ế🥺</span>...
+      👉.<span class="string-highlight">Add mình nhaa...👇👇</span></pre>
+<script>
+  function setupTypewriter(t) {
+      var HTML = t.innerHTML;
 
+      t.innerHTML = "";
 
-<div class="content">
-         <h3 class="text" data-text="QUỲNH HOA">
-    Design by  <a href="https://www.facebook.com/profile.php?id=100070693515932"><u><font color="#FFFF00">QUỲNH HOA</font></u></a>
-         </h3>
-      </div>
-      
+      var cursorPosition = 0,
+          tag = "",
+          writingTag = false,
+          tagOpen = false,
+          typeSpeed = 100,
+        tempTypeSpeed = 0;
+
+      var type = function() {
+        
+          if (writingTag === true) {
+              tag += HTML[cursorPosition];
+          }
+
+          if (HTML[cursorPosition] === "<") {
+              tempTypeSpeed = 0;
+              if (tagOpen) {
+                  tagOpen = false;
+                  writingTag = true;
+              } else {
+                  tag = "";
+                  tagOpen = true;
+                  writingTag = true;
+                  tag += HTML[cursorPosition];
+              }
+          }
+          if (!writingTag && tagOpen) {
+              tag.innerHTML += HTML[cursorPosition];
+          }
+          if (!writingTag && !tagOpen) {
+              if (HTML[cursorPosition] === " ") {
+                  tempTypeSpeed = 0;
+              }
+              else {
+                  tempTypeSpeed = (Math.random() * typeSpeed) + 50;
+              }
+              t.innerHTML += HTML[cursorPosition];
+          }
+          if (writingTag === true && HTML[cursorPosition] === ">") {
+              tempTypeSpeed = (Math.random() * typeSpeed) + 50;
+              writingTag = false;
+              if (tagOpen) {
+                  var newSpan = document.createElement("span");
+                  t.appendChild(newSpan);
+                  newSpan.innerHTML = tag;
+                  tag = newSpan.firstChild;
+              }
+          }
+
+          cursorPosition += 1;
+          if (cursorPosition < HTML.length - 1) {
+              setTimeout(type, tempTypeSpeed);
+          }
+
+      };
+
+      return {
+          type: type
+      };
+  }
+
+  var typer = document.getElementById('typewriter');
+
+  typewriter = setupTypewriter(typewriter);
+
+  typewriter.type();
+</script>
+
  <div class="container">
   <h1 class="heading" data-target-resolver></h1>
 </div>
@@ -1036,106 +1214,15 @@ next()
 
 
 
-</script>     
-      
- <div class="clock">
-      <div class="display">
-</div>
-</div>
-<script>
-      setInterval(function(){
-        const clock = document.querySelector(".display");
-        let time = new Date();
-        let sec = time.getSeconds();
-        let min = time.getMinutes();
-        let hr = time.getHours();
-        let day = 'AM';
-        if(hr > 12){
-          day = 'PM';
-          hr = hr - 12;
-        }
-        if(hr == 0){
-          hr = 0;
-        }
-        if(sec < 10){
-          sec = '0' + sec;
-        }
-        if(min < 10){
-          min = '0' + min;
-        }
-        if(hr < 10){
-          hr = '0' + hr;
-        }
-        clock.textContent = hr + ':' + min + ':' + sec + " " + day;
-      });
-    </script>
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-    var script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
-    script.onload = function(){
-        particlesJS("snow", {
-            "particles": {
-                "number": {
-                    "value": 200,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#ffffff"
-                },
-                "opacity": {
-                    "value": 0.7,
-                    "random": false,
-                    "anim": {
-                        "enable": false
-                    }
-                },
-                "size": {
-                    "value": 5,
-                    "random": true,
-                    "anim": {
-                        "enable": false
-                    }
-                },
-                "line_linked": {
-                    "enable": false
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 5,
-                    "direction": "bottom",
-                    "random": true,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": true,
-                        "rotateX": 300,
-                        "rotateY": 1200
-                    }
-                }
-            },
-            "interactivity": {
-                "events": {
-                    "onhover": {
-                        "enable": false
-                    },
-                    "onclick": {
-                        "enable": false
-                    },
-                    "resize": false
-                }
-            },
-            "retina_detect": true
-        });
-    }
-    document.head.append(script);
-});
+</script> 
 
-</script>
+<div class="content">
+         <h3 class="text" data-text="QUỲNH HOA">
+    Design by  <a href="https://www.facebook.com/profile.php?id=100070693515932"><u><font color="#FFFF00">QUỲNH HOA</font></u></a>
+         </h3>
+      </div>
+      
+<h1><font color="black">&copy; 2021 quynhhoa.tk</font></h1>
 </body>
 </html>
   
