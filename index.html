@@ -1,6 +1,7 @@
 
 
 
+
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
@@ -11,8 +12,16 @@
 <meta content="Hi, Mình là Quỳnh Hoa Mms" name="keywords"/>
 <meta content="Hi, Mình là Quỳnh Hoa Mms" name="Abstract"/>
 <meta name="Hi, Mình là Quỳnh Hoa Mms"/>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Hi, Mình là Quỳnh Hoa Mms🥰</title>
+  <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../res/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="./main.css" />
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
 html, body {
@@ -26,6 +35,7 @@ html, body {
   background-repeat: no-repeat;
   font-family: Iceland;
   color: ##ff0042;
+  transition: all 0.35s linear;
 }
 
 h1 {color: #ed4ece;font-size: 30px;margin: 0;text-align:center;text-transform:uppercase; font-family:Iceland;}
@@ -129,6 +139,89 @@ a:link, a:visited {
 a:hover, a:active {
     background-color: #f71d1d;
 }
+
+
+.player {
+    background-color: rgb(242,49,179);
+    width: 60%;
+    left: 20%;
+    right: 20%;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: 48px 1fr 48px;
+    grid-gap: 16px;
+    padding: 8px 24px;
+    position: relative;
+    border-radius: 64px;
+    justify-content: center;
+    align-items: center;
+}
+
+.control,#current {
+    color: #FAFAFA;
+    text-shadow: 0 0 0.5em cyan, 0 0 0.5em cyan;
+    font-size: 28px;
+    font-weight: 600;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 16px;
+}
+
+#playbtn {
+    
+    text-shadow: 0 0 0.5em cyan, 0 0 0.5em cyan;
+    font-size: 28px;
+    color: #FAFAFA;
+    font-weight: 600;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #FAFAFA;
+    cursor: pointer rgb(145,241,81)
+}
+
+#playbtn:hover {
+    -webkit-text-fill-color: #FAFAFA;
+}
+
+.info {
+    color: #FAFAFA;
+    font-weight: 600;
+    text-shadow: 0 0 0.5em cyan, 0 0 0.5em cyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+}
+
+#current {
+    text-align: right;
+}
+
+.bar {
+    --space: -4px;
+    background-color: #fff;
+    overflow: hidden;
+    left: var(--space);
+    right: var(--space);
+    top: var(--space);
+    bottom: var(--space);
+    position: absolute;
+    border-radius: 64px;
+    z-index: -2;
+    text-shadow: 0 0 0.5em cyan, 0 0 0.5em cyan;
+    opacity: 0;
+}
+
+#progress {
+    display: block;
+    width: var(--progress,0%);
+    background-color: #fff;
+    text-shadow: 0 0 0.5em cyan, 0 0 0.5em cyan;
+    transition: all 1s linear;
+    height: 100%;
+}
+
 
 		
 
@@ -1019,6 +1112,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
 <marquee bgcolor="#e21482" ><h3><font style="text-shadow:0px 1px 5px #000" color="#FFFFFF"> ...WELCOME TO QUYNHHOA.TK-CHÚC BẠN 1 NGÀY TỐT LÀNH-VÀ ĐƯỢC NHIỀU TOP1 NHAAAAAAAAAAA😊... </font></h3></marquee>
 
+
+
 <pre id="typewriter"><span class="var-highlight">HI,I'M QUỲNH HOA...</span>      
       👉.<span class="string-highlight">18,5 YEARS OLD</span>...
       👉.<span class="string-highlight">1m 52🥺</span>...
@@ -1100,6 +1195,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
   typewriter.type();
 </script>
+
+ 
+
 
  <div class="container">
   <h1 class="heading" data-target-resolver></h1>
@@ -1214,11 +1312,69 @@ resolver.resolve(options, callback);
 next()
 
 'use strict';
+</script>
 
+<div><audio id="player" src="https://data37.chiasenhac.com/downloads/1892/6/1891508-053ec37f/320/Please%20Tell%20Me%20Why%20-%20Freestyle.mp3"></audio><div>
+    <div class="player">
+      <div class="control">
+        <i class="fas fa-play" id="playbtn"></i>
+      </div>
+      <div class="info"><marquee behavior="alternate">
+      ♥️  Please Tell Me Why  ♥️
+        </marquee><div class="bar">
+          <div id="progress"></div>
+        </div>
+      </div>
 
+      <div id="current">0:00</div>
+    </div>
+   <script src="./player.js"></script>
+    <script>
+var player = document.getElementById("player");
+let progress = document.getElementById("progress");
+let playbtn = document.getElementById("playbtn");
 
+var playpause = function () {
+  if (player.paused) {
+    player.play();
+  } else {
+    player.pause();
+  }
+}
 
-</script> 
+playbtn.addEventListener("click", playpause);
+
+player.onplay = function () {
+  playbtn.classList.remove("fa-play");
+  playbtn.classList.add("fa-pause");
+}
+
+player.onpause = function () {
+  playbtn.classList.add("fa-play");
+  playbtn.classList.remove("fa-pause");
+}
+
+player.ontimeupdate = function () {
+  let ct = player.currentTime;
+  current.innerHTML = timeFormat(ct);
+  //progress
+  let duration = player.duration;
+  prog = Math.floor((ct * 100) / duration);
+  progress.style.setProperty("--progress", prog + "%");
+}
+
+function timeFormat(ct) {
+  minutes = Math.floor(ct / 60);
+  seconds = Math.floor(ct % 60);
+
+  if (seconds < 10) {
+    seconds = "0"+seconds;
+  }
+
+  return minutes + ":" + seconds;
+}
+    </script>
+
 
 <div class="content">
          <h3 class="text" data-text="QUỲNH HOA">
