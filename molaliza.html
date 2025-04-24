@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mona Lisa bằng HTML và CSS</title>
+    <title>Mona Lisa Cải Tiến</title>
     <style>
         body {
             display: flex;
@@ -17,7 +17,9 @@
             position: relative;
             width: 300px;
             height: 400px;
-            background: linear-gradient(to bottom, #3b5e3b, #6b8e6b); /* Nền xanh đậm của bức tranh */
+            background: linear-gradient(to bottom, #2a4d2a, #5a7d5a); /* Nền xanh đậm hơn */
+            border: 5px solid #4a3c31; /* Khung gỗ */
+            border-radius: 10px;
         }
         /* Khuôn mặt */
         .face {
@@ -25,24 +27,43 @@
             top: 100px;
             left: 75px;
             width: 150px;
-            height: 200px;
+            height: 180px;
             background: #f4d3b2; /* Màu da */
-            border-radius: 50%;
+            border-radius: 50% 50% 45% 45%;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Thêm bóng đổ */
         }
         /* Mắt */
         .eye-left, .eye-right {
             position: absolute;
             top: 50px;
-            width: 20px;
-            height: 10px;
-            background: #000;
+            width: 15px;
+            height: 8px;
+            background: #1a0f0f;
             border-radius: 50%;
+            border: 1px solid #fff; /* Viền mắt */
         }
         .eye-left {
-            left: 40px;
+            left: 45px;
         }
         .eye-right {
             left: 90px;
+        }
+        /* Lông mày */
+        .eyebrow-left, .eyebrow-right {
+            position: absolute;
+            top: 40px;
+            width: 25px;
+            height: 5px;
+            background: #3c2f2f;
+            border-radius: 50%;
+        }
+        .eyebrow-left {
+            left: 40px;
+            transform: rotate(-10deg);
+        }
+        .eyebrow-right {
+            left: 85px;
+            transform: rotate(10deg);
         }
         /* Mũi */
         .nose {
@@ -53,16 +74,18 @@
             height: 30px;
             background: #e6b89c;
             border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
         /* Miệng */
         .mouth {
             position: absolute;
             top: 120px;
-            left: 50px;
-            width: 50px;
-            height: 20px;
+            left: 55px;
+            width: 40px;
+            height: 15px;
             background: #d66b6b;
-            border-radius: 0 0 50px 50px; /* Nụ cười Mona Lisa */
+            border-radius: 50% 50% 20% 20%;
+            box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.3); /* Bóng trong miệng */
         }
         /* Tóc */
         .hair {
@@ -82,19 +105,20 @@
             left: 60px;
             width: 180px;
             height: 220px;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.4);
             border-radius: 50%;
             z-index: 0;
         }
         /* Đường viền cổ */
         .neck {
             position: absolute;
-            top: 250px;
+            top: 230px;
             left: 75px;
             width: 100px;
-            height: 50px;
+            height: 60px;
             background: #f4d3b2;
-            border-radius: 20px;
+            border-radius: 20px 20px 50% 50%;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -103,6 +127,8 @@
         <div class="hair"></div>
         <div class="veil"></div>
         <div class="face">
+            <div class="eyebrow-left"></div>
+            <div class="eyebrow-right"></div>
             <div class="eye-left"></div>
             <div class="eye-right"></div>
             <div class="nose"></div>
